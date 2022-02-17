@@ -1,0 +1,422 @@
+
+*{
+	padding:0px;
+	margin: 0px;
+	list-style-type: none;
+}
+
+html{
+	background-color:rgba(9,9,121,1);
+}
+
+body > ul{
+	list-style-type: none;
+	display: flex;
+	height: 100%;
+	position: absolute;
+}
+
+body > ul li:nth-child(-n+3){
+	height: 100vh;
+	width: calc(100vw / 3);
+}
+
+/* hover effect */
+body > ul li:nth-of-type(1){
+/*background-color: red;*/
+}
+body > ul li:nth-of-type(2){
+/*background-color: blue;*/
+}
+body > ul li:nth-of-type(3){
+/*background-color: green;*/
+}
+
+
+
+
+/* Vis body */
+
+/*  cube container */
+body > ul li:nth-of-type(4){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transform-style: preserve-3d;
+	transition: all 1s;
+	width: 50px;
+  height: 50px;
+  z-index: 1;
+}
+
+/* cube */
+body > ul li:nth-of-type(4) section:nth-child(1){
+	transform-style: preserve-3d;
+	position:absolute;
+	width: 100%;
+  height: 100%;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div{
+	position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(1) { 
+	transform: rotateY(  0deg) translateZ(25px); 
+	background-color: red;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(2){
+	transform: rotateY( 90deg) translateZ(25px);
+	background-color: blue;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(3){
+	transform: rotateY(180deg) translateZ(25px);
+	background-color: green;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(4){
+	transform: rotateY(-90deg) translateZ(25px);
+	background-color: yellow;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(5){
+	transform: rotateX( 90deg) translateZ(25px);
+	background-color: orange;
+}
+
+body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(6){
+	transform: rotateX(-90deg) translateZ(25px);
+	background-color: white;
+}
+
+
+/* fin */
+
+body > ul li:nth-of-type(4) section:nth-child(2){
+    background: rgb(3,36,0);
+background: linear-gradient(90deg, rgba(3,36,0,1) 0%, rgba(9,121,48,1) 35%, rgba(9,255,0,1) 100%);
+    position: absolute;
+	transform-style: preserve-3d;
+    width: 100%;
+    height: 70%;
+    top: 15%;
+    left: -50%;
+	animation:  finMoving  1s ease-in 0s infinite normal;
+	transform: rotateY(0deg);
+}
+
+
+/* Animation fin */
+@keyframes finMoving {
+0%{
+	transform: rotateY(-50deg);
+}
+100%{
+	transform: rotateY(50deg);
+} 
+}
+
+/* eyes */
+   
+	body > ul li:nth-of-type(4) section:nth-child(3){
+		transform-style: preserve-3d;
+    position: absolute;
+	width: 100%;
+    height: 100%;
+	}
+
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1){
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: -10px;
+    transform: translateZ(25px);
+    position: absolute;
+	transform-style: preserve-3d;
+} 
+
+
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2){
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: -10px;
+    transform:  translateZ(-25px);
+    position: absolute;
+			transform-style: preserve-3d;
+	
+} 
+
+/* Making circle */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(204,0,102, 1);
+}
+
+/* Making circle */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(204,0,102, 1);
+}
+
+/* X Axis */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(1) {transform: rotate3d(1, 0, 0, 0deg); }
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(2) {transform: rotate3d(1, 0, 0, 36deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(3) {transform: rotate3d(1, 0, 0, 72deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(4) {transform: rotate3d(1, 0, 0, 108deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(5) {transform: rotate3d(1, 0, 0, 144deg);}
+/* Y Axis */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(6) {transform: rotate3d(0, 1, 0, 0deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(7) {transform: rotate3d(0, 1, 0, 36deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(8) {transform: rotate3d(0, 1, 0, 72deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(9) {transform: rotate3d(0, 1, 0, 108deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(10) {transform: rotate3d(0, 1,0, 144deg);}
+/* Z Axis */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(11) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 0deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(12) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 36deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(13) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 72deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(14) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(15) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);}
+
+
+/* X Axis */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(1) {transform: rotate3d(1, 0, 0, 0deg); }
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(2) {transform: rotate3d(1, 0, 0, 36deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(3) {transform: rotate3d(1, 0, 0, 72deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(4) {transform: rotate3d(1, 0, 0, 108deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(5) {transform: rotate3d(1, 0, 0, 144deg);}
+/* Y Axis */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(6) {transform: rotate3d(0, 1, 0, 0deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(7) {transform: rotate3d(0, 1, 0, 36deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(8) {transform: rotate3d(0, 1, 0, 72deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(9) {transform: rotate3d(0, 1, 0, 108deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(10) {transform: rotate3d(0, 1,0, 144deg);}
+/* Z Axis */
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(11) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 0deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(12) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 36deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(13) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 72deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(14) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);}
+body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(15) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);}
+
+
+
+/* Hover block change other item */
+:is(li:nth-of-type(1):hover, li:nth-of-type(2):hover,li:nth-of-type(3):hover) ~ li:nth-of-type(4){
+}
+
+body > ul li:nth-of-type(1):hover ~ li:nth-of-type(4){
+	left: calc(50% - 25px);
+	top:  calc(50% - 25px);
+	transform: rotateY(	-179deg);
+}
+
+/* background */
+body > ul li:last-child{
+	width :100vw;
+	height :100vh;
+	position:fixed;
+    /* z-index: -1; */
+	/* background: rgb(2,0,36); */
+	background: repeating-linear-gradient(90deg, rgba(2,0,36,1),rgba(9,9,121,1),rgba(0,212,255,1),rgba(2,0,36,1));
+	background-repeat:repeat-x;
+	background-size: 400% 100%;
+	animation:  ocean  10s linear  infinite normal;
+	animation-direction: reverse;
+	opacity:1;
+	transition :all 1s;
+	animation-delay: 5s;
+    z-index: -6;
+}
+
+
+/* Animation background */
+@keyframes ocean {
+0%{background-position:100% 50%}
+100%{background-position:-33% 50%} /* instead of 0% 50% */
+}
+
+body > ul li:nth-of-type(5):hover ~	 li:last-child{
+	opacity:0;
+}
+
+
+body > ul li:nth-of-type(1):hover ~ li:last-child{
+	opacity:1;
+	animation-direction: normal;
+}
+
+body > ul li:nth-of-type(2):hover ~ li:last-child{
+	opacity:0;
+    animation-play-state: paused;
+}
+
+
+
+
+/* duikboot */
+body > ul li:nth-of-type(5){
+	position : fixed;
+	right: -100px;
+    top: 100px;
+	transition :all 5s;
+	animation:  duikbootMove  10s paused;
+}
+
+body > ul li:nth-of-type(5) > div:nth-child(1) {
+	width: 100px;
+	height :70px;
+    background-color: red;
+    border-radius: 10px;
+	position:absolute;
+}
+
+body > ul li:nth-of-type(5) > div:nth-child(2) {
+	background-color: black;
+    z-index: 1;
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    left: 5px;
+    top: 20px;
+}
+
+
+body > ul li:nth-of-type(5) > div:nth-child(3) {
+	background-color: black;
+    z-index: 1;
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    left: 35px;
+    top: 20px;
+}
+
+body > ul li:nth-of-type(5) > div:nth-child(4) {
+	background-color: black;
+    z-index: 1;
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    left: 65px;
+    top: 20px;
+}
+
+
+body > ul li:nth-of-type(5) > div:nth-child(1n+2):hover{
+	background-color:yellow;
+}
+
+
+body > ul li:nth-of-type(2):hover * li:nth-of-type(5){
+	animation:  duikbootMove  10s paused;
+}
+
+
+body > ul li:nth-of-type(3):hover ~ li:nth-of-type(5){
+	animation:  duikbootMove  10s forwards;
+}
+
+
+@keyframes duikbootMove {
+from{
+	right: -100px;
+}
+to{
+	right: 1000px;
+} 
+}
+
+
+
+
+
+/* Floor */
+
+@keyframes floorRepeat {
+    from {transform: translateX(  0%);}
+    to {transform: translateX(-100%);}
+}
+
+body > ul li:nth-of-type(6){
+    background-color: rgb(107, 57, 17);
+    width: 101vw;
+    height: 300px;
+    clip-path: polygon(61% 76%, 51% 80%, 34% 79%, 27% 85%, 18% 77%, 12% 83%, 0% 77%, 0% 100%, 100% 100%, 100% 77%, 91% 85%, 87% 79%, 77% 77%, 71% 84%); 
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    animation: floorRepeat 6s infinite linear;
+    overflow: hidden;   
+    z-index: 1;
+}
+
+body > ul li:nth-of-type(7){
+    content: "";
+    background-color: rgb(107, 57, 17);
+    width: 100vw;
+    height: 300px;
+    left: 100vw;
+    clip-path: polygon(61% 76%, 51% 80%, 34% 79%, 27% 85%, 18% 77%, 12% 83%, 0% 77%, 0% 100%, 100% 100%, 100% 77%, 91% 85%, 87% 79%, 77% 77%, 71% 84%); 
+    bottom: 0;
+    position: fixed;
+    animation: floorRepeat 6s infinite linear;
+    overflow: hidden;   
+    z-index: 1;
+}
+
+body > ul li:nth-of-type(1):hover ~ li:nth-child(7){
+	animation-direction: reverse;
+}
+
+body > ul li:nth-of-type(1):hover ~ li:nth-child(6){
+	animation-direction: reverse;
+}
+
+/* bubbles */
+
+body > ul li:nth-of-type(8) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -5;
+}
+
+body > ul li:nth-of-type(8) > div{
+       width: 50px;
+    height: 80px;
+    float: left;
+    shape-outside: border-box;
+    shape-image-threshold: 0.9;
+    margin-top: 54vw;
+    margin-left: 52vw;
+}
+
+
+body > ul li:nth-of-type(8) p{
+width: 800px;
+color: white;
+animation:  bubbleRepeat  10s ease-in 0s infinite normal;
+text-align: right;
+transform: rotateZ(90deg);
+opacity: 0.1;
+}
+
+@keyframes bubbleRepeat {
+    from {    padding-left: 100px;}
+    to {    padding-left: 0px;
+}
