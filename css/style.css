@@ -5,6 +5,7 @@
 	list-style-type: none;
 }
 
+/* Standaard achtergrond blauw als gradient niet werkt */
 html{
 	background-color:rgba(9,9,121,1);
 }
@@ -14,6 +15,8 @@ body > ul{
 	display: flex;
 	height: 100%;
 	position: absolute;
+    transform-style: preserve-3d;
+    overflow: hidden;
 }
 
 body > ul li:nth-child(-n+3){
@@ -21,74 +24,64 @@ body > ul li:nth-child(-n+3){
 	width: calc(100vw / 3);
 }
 
-/* hover effect */
-body > ul li:nth-of-type(1){
-/*background-color: red;*/
-}
-body > ul li:nth-of-type(2){
-/*background-color: blue;*/
-}
-body > ul li:nth-of-type(3){
-/*background-color: green;*/
-}
-
-
-
-
-/* Vis body */
-
-/*  cube container */
+/* Vis lichaam */
 body > ul li:nth-of-type(4){
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transform-style: preserve-3d;
-	transition: all 1s;
-	width: 50px;
-  height: 50px;
-  z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
 }
 
-/* cube */
+/* Vis lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1){
 	transform-style: preserve-3d;
 	position:absolute;
-	width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body > ul li:nth-of-type(4) section:nth-child(1) div{
-	position: absolute;
-  width: 50px;
-  height: 50px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
 }
 
+/* Voorkant lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(1) { 
 	transform: rotateY(  0deg) translateZ(25px); 
 	background-color: red;
 }
 
+/* Rechterkant lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(2){
 	transform: rotateY( 90deg) translateZ(25px);
 	background-color: blue;
 }
 
+/* Achterkant lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(3){
 	transform: rotateY(180deg) translateZ(25px);
 	background-color: green;
 }
 
+/* linkerkant lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(4){
 	transform: rotateY(-90deg) translateZ(25px);
 	background-color: yellow;
 }
 
+/* Onderkant lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(5){
 	transform: rotateX( 90deg) translateZ(25px);
 	background-color: orange;
 }
 
+/* Bovenkant lichaam */
 body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(6){
 	transform: rotateX(-90deg) translateZ(25px);
 	background-color: white;
@@ -96,10 +89,9 @@ body > ul li:nth-of-type(4) section:nth-child(1) div:nth-child(6){
 
 
 /* fin */
-
 body > ul li:nth-of-type(4) section:nth-child(2){
     background: rgb(3,36,0);
-background: linear-gradient(90deg, rgba(3,36,0,1) 0%, rgba(9,121,48,1) 35%, rgba(9,255,0,1) 100%);
+    background: linear-gradient(90deg, rgba(3,36,0,1) 0%, rgba(9,121,48,1) 35%, rgba(9,255,0,1) 100%);
     position: absolute;
 	transform-style: preserve-3d;
     width: 100%;
@@ -111,7 +103,7 @@ background: linear-gradient(90deg, rgba(3,36,0,1) 0%, rgba(9,121,48,1) 35%, rgba
 }
 
 
-/* Animation fin */
+/* Animatie fin bewegen */
 @keyframes finMoving {
 0%{
 	transform: rotateY(-50deg);
@@ -121,15 +113,15 @@ background: linear-gradient(90deg, rgba(3,36,0,1) 0%, rgba(9,121,48,1) 35%, rgba
 } 
 }
 
-/* eyes */
-   
-	body > ul li:nth-of-type(4) section:nth-child(3){
-		transform-style: preserve-3d;
+/* Ogen */
+body > ul li:nth-of-type(4) section:nth-child(3){
+    transform-style: preserve-3d;
     position: absolute;
-	width: 100%;
+    width: 100%;
     height: 100%;
-	}
+}
 
+/* Linker oog */
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1){
     width: 20px;
     height: 20px;
@@ -140,7 +132,7 @@ body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1){
 	transform-style: preserve-3d;
 } 
 
-
+/* Rechter oog */
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2){
     width: 20px;
     height: 20px;
@@ -148,28 +140,41 @@ body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2){
     top: -10px;
     transform:  translateZ(-25px);
     position: absolute;
-			transform-style: preserve-3d;
+	transform-style: preserve-3d;
 	
 } 
 
-/* Making circle */
+/* Maken van linker oog */
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background: rgba(204,0,102, 1);
+  animation:  eyes  1s infinite;
 }
 
-/* Making circle */
+/* Maken van rechter oog */
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background: rgba(204,0,102, 1);
+  animation:  eyes  5s infinite;
 }
 
+/* Animatie oog verandert van kleur */
+@keyframes eyes {
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
+    } 
+}
+
+/* Linker oog rond maken */
 /* X Axis */
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(1) {transform: rotate3d(1, 0, 0, 0deg); }
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(2) {transform: rotate3d(1, 0, 0, 36deg);}
@@ -189,7 +194,7 @@ body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-ch
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(14) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);}
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(2) > div:nth-child(15) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);}
 
-
+/* Rechter oog rond maken */
 /* X Axis */
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(1) {transform: rotate3d(1, 0, 0, 0deg); }
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(2) {transform: rotate3d(1, 0, 0, 36deg);}
@@ -209,25 +214,18 @@ body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-ch
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(14) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 108deg);}
 body > ul li:nth-of-type(4) section:nth-child(3) > div:nth-child(1) > div:nth-child(15) {transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);}
 
-
-
-/* Hover block change other item */
-:is(li:nth-of-type(1):hover, li:nth-of-type(2):hover,li:nth-of-type(3):hover) ~ li:nth-of-type(4){
-}
-
+/* Draaien van vis naar links */
 body > ul li:nth-of-type(1):hover ~ li:nth-of-type(4){
 	left: calc(50% - 25px);
 	top:  calc(50% - 25px);
 	transform: rotateY(	-179deg);
 }
 
-/* background */
+/* Achtergrond linear gradient */
 body > ul li:last-child{
 	width :100vw;
 	height :100vh;
 	position:fixed;
-    /* z-index: -1; */
-	/* background: rgb(2,0,36); */
 	background: repeating-linear-gradient(90deg, rgba(2,0,36,1),rgba(9,9,121,1),rgba(0,212,255,1),rgba(2,0,36,1));
 	background-repeat:repeat-x;
 	background-size: 400% 100%;
@@ -237,32 +235,32 @@ body > ul li:last-child{
 	transition :all 1s;
 	animation-delay: 5s;
     z-index: -6;
+    transform: translateZ(-1000px);
 }
 
 
-/* Animation background */
+/* Animatie achtergrond */
 @keyframes ocean {
 0%{background-position:100% 50%}
 100%{background-position:-33% 50%} /* instead of 0% 50% */
 }
 
+
 body > ul li:nth-of-type(5):hover ~	 li:last-child{
 	opacity:0;
 }
 
-
+/* Start animatie naar links */
 body > ul li:nth-of-type(1):hover ~ li:last-child{
 	opacity:1;
 	animation-direction: normal;
 }
 
+/* Stop achtergrond animatie op hover */
 body > ul li:nth-of-type(2):hover ~ li:last-child{
 	opacity:0;
     animation-play-state: paused;
 }
-
-
-
 
 /* duikboot */
 body > ul li:nth-of-type(5){
@@ -270,9 +268,10 @@ body > ul li:nth-of-type(5){
 	right: -100px;
     top: 100px;
 	transition :all 5s;
-	animation:  duikbootMove  10s paused;
+	animation:  duikbootMove  30s forwards;
 }
 
+/* Frame duikboot */
 body > ul li:nth-of-type(5) > div:nth-child(1) {
 	width: 100px;
 	height :70px;
@@ -281,6 +280,7 @@ body > ul li:nth-of-type(5) > div:nth-child(1) {
 	position:absolute;
 }
 
+/* Raam 1 duikboot */
 body > ul li:nth-of-type(5) > div:nth-child(2) {
 	background-color: black;
     z-index: 1;
@@ -292,7 +292,7 @@ body > ul li:nth-of-type(5) > div:nth-child(2) {
     top: 20px;
 }
 
-
+/* Raam 2 duikboot */
 body > ul li:nth-of-type(5) > div:nth-child(3) {
 	background-color: black;
     z-index: 1;
@@ -304,6 +304,7 @@ body > ul li:nth-of-type(5) > div:nth-child(3) {
     top: 20px;
 }
 
+/* Raam 3 duikboot */
 body > ul li:nth-of-type(5) > div:nth-child(4) {
 	background-color: black;
     z-index: 1;
@@ -315,22 +316,12 @@ body > ul li:nth-of-type(5) > div:nth-child(4) {
     top: 20px;
 }
 
-
+/* Verander raamen van kleur */
 body > ul li:nth-of-type(5) > div:nth-child(1n+2):hover{
 	background-color:yellow;
 }
 
-
-body > ul li:nth-of-type(2):hover * li:nth-of-type(5){
-	animation:  duikbootMove  10s paused;
-}
-
-
-body > ul li:nth-of-type(3):hover ~ li:nth-of-type(5){
-	animation:  duikbootMove  10s forwards;
-}
-
-
+/* Beweeg duikboot van rechts naar links */
 @keyframes duikbootMove {
 from{
 	right: -100px;
@@ -340,17 +331,13 @@ to{
 } 
 }
 
-
-
-
-
-/* Floor */
-
+/* Grond animatie */
 @keyframes floorRepeat {
     from {transform: translateX(  0%);}
     to {transform: translateX(-100%);}
 }
 
+/* Begin grond */
 body > ul li:nth-of-type(6){
     background-color: rgb(107, 57, 17);
     width: 101vw;
@@ -364,6 +351,7 @@ body > ul li:nth-of-type(6){
     z-index: 1;
 }
 
+/* Einde grond */
 body > ul li:nth-of-type(7){
     content: "";
     background-color: rgb(107, 57, 17);
@@ -378,45 +366,95 @@ body > ul li:nth-of-type(7){
     z-index: 1;
 }
 
+/* Draai grond animatie naar links */
 body > ul li:nth-of-type(1):hover ~ li:nth-child(7){
 	animation-direction: reverse;
 }
 
+/* Draai grond animatie naar rechts */
 body > ul li:nth-of-type(1):hover ~ li:nth-child(6){
 	animation-direction: reverse;
 }
 
-/* bubbles */
-
-body > ul li:nth-of-type(8) {
+/* haak */
+body > ul li:nth-of-type(9){
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -5;
+    top: -10%;
+    left: 80%;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    transform: rotateX(-20deg) rotateY(-20deg);;
+    animation:  haak  20s linear infinite;
 }
 
+/* Beweeg haak in 3d omgeving */
+@keyframes haak {
+    0% {   transform: rotateX(-20deg) rotateY(-20deg);}
+    50% {    transform: rotateX(50deg)rotateY(360deg);}
+    100% {    transform: rotateX(-20deg)rotateY(-20deg);}
+}
+
+body > ul li:nth-of-type(9) section{
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+body > ul li:nth-of-type(9) section div{
+position: absolute;
+width: 50px;
+height: 50px;
+background-color: black;
+}
+
+
+
+body > ul li:nth-of-type(9) section:nth-child(1) div:nth-child(1) {
+    transform: rotateY( 0deg) translateZ(25px);
+    height: 600px;
+    width: 23px;
+    clip-path: polygon(38% 96%, 100% 94%, 38% 98%, 0 95%, 0 0, 5% 0, 4% 90%);
+}
+
+
+/* bubbles */
+body > ul li:nth-of-type(8) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    z-index: -5;
+    position: fixed;
+    display: none;
+}
+
+/* Bubble textwrap om de tekst heen */
 body > ul li:nth-of-type(8) > div{
-       width: 50px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     float: left;
     shape-outside: border-box;
     shape-image-threshold: 0.9;
-    margin-top: 54vw;
-    margin-left: 52vw;
+    margin-top: calc(50% + 50px);
+    margin-left: calc(50% - 50px);
 }
 
-
+/* Bubble text */
 body > ul li:nth-of-type(8) p{
 width: 800px;
 color: white;
-animation:  bubbleRepeat  10s ease-in 0s infinite normal;
+animation:  bubbleRepeat  1s ease-in 0s infinite normal;
 text-align: right;
 transform: rotateZ(90deg);
 opacity: 0.1;
+padding-left: 0px;
 }
 
+/* Animatie bubbles bewegen */
 @keyframes bubbleRepeat {
-    from {    padding-left: 100px;}
-    to {    padding-left: 0px;
+    from {    padding-left: 0px;}
+    to {    padding-left: 10px;}
 }
